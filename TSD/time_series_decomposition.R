@@ -39,6 +39,7 @@ head(data)
 y<-ts(data, frequency=12, start=c(2005,1))
 y
 
+plot(data)
 #plot the time series
 plot.ts(y)
 
@@ -68,3 +69,8 @@ datacomponents
 
 #plot the components
 plot(datacomponents)
+
+#Holt-Winters filtering
+y_forecasts <- HoltWinters(y, beta=FALSE, gamma=FALSE)
+y_forecasts
+plot(y_forecasts)
